@@ -1,36 +1,45 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const phdAlumni = [
-  { name: '刘烨', classYear: '2017级', destination: '临沂大学', role: '教师', sector: 'academia' },
-  { name: '王旭之', classYear: '2018级', destination: '天津师范大学', role: '教师', sector: 'academia' },
-  { name: '吕凡', classYear: '2018级', destination: '中科院自动化所', role: '博士后', sector: 'academia' },
-  { name: '边存灵', classYear: '2019级', destination: '中国海洋大学', role: '教师', sector: 'academia' },
-  { name: '陈峙灏', classYear: '2019级', destination: '荣耀终端有限公司', role: '媒体算法高级工程师', sector: 'industry' },
-  { name: '韩瑞泽', classYear: '2019级', destination: '深圳先进研究院', role: 'Researcher', sector: 'academia' },
+interface Alumni {
+  name: string;
+  classYear?: string;
+  destination: string;
+  role: string;
+  sector: string;
+  image: string;
+}
+
+const phdAlumni: Alumni[] = [
+  { name: '刘烨', classYear: '2017级', destination: '临沂大学', role: '教师', sector: 'academia', image: '/images/20240619173800.png' },
+  { name: '王旭之', classYear: '2018级', destination: '天津师范大学', role: '教师', sector: 'academia', image: '/images/20240619173400.jpg' },
+  { name: '吕凡', classYear: '2018级', destination: '中科院自动化所', role: '博士后', sector: 'academia', image: '/images/20230830095430.png' },
+  { name: '边存灵', classYear: '2019级', destination: '中国海洋大学', role: '教师', sector: 'academia', image: '/images/20240619174359.jpg' },
+  { name: '陈峙灏', classYear: '2019级', destination: '荣耀终端有限公司', role: '媒体算法高级工程师', sector: 'industry', image: '/images/20240608180658.jpg' },
+  { name: '韩瑞泽', classYear: '2019级', destination: '深圳先进研究院', role: 'Researcher', sector: 'academia', image: '/images/20240601165337.png' },
 ];
 
-const masterAlumni2021 = [
-  { name: '马恩慧', destination: '西湖大学', role: '博士', sector: 'academia' },
-  { name: '张家琪', destination: '美团', role: '策略产品经理', sector: 'industry' },
-  { name: '崔晓', destination: '腾讯IEG天美L1工作室', role: '游戏客户端开发', sector: 'industry' },
-  { name: '薛森华', destination: '腾讯', role: '游戏开发工程师', sector: 'industry' },
-  { name: '李炜骐', destination: '中国农业银行研发中心', role: '研发工程师', sector: 'industry' },
-  { name: '陈浩然', destination: '奥迪一汽新能源', role: '智能制造工程师', sector: 'industry' },
-  { name: '王飞凡', destination: '联想研究院', role: '算法工程师', sector: 'industry' },
+const masterAlumni2021: Alumni[] = [
+  { name: '马恩慧', destination: '西湖大学', role: '博士', sector: 'academia', image: '/images/20240711234134.jpg' },
+  { name: '张家琪', destination: '美团', role: '策略产品经理', sector: 'industry', image: '/images/20240608183011.jpg' },
+  { name: '崔晓', destination: '腾讯IEG天美L1工作室', role: '游戏客户端开发', sector: 'industry', image: '/images/20240608182922.jpg' },
+  { name: '薛森华', destination: '腾讯', role: '游戏开发工程师', sector: 'industry', image: '/images/20240608182833.jpg' },
+  { name: '李炜骐', destination: '中国农业银行研发中心', role: '研发工程师', sector: 'industry', image: '/images/20240608182709.jpg' },
+  { name: '陈浩然', destination: '奥迪一汽新能源', role: '智能制造工程师', sector: 'industry', image: '/images/20240608182433.jpg' },
+  { name: '王飞凡', destination: '联想研究院', role: '算法工程师', sector: 'industry', image: '/images/20240608182334.jpg' },
 ];
 
-const masterAlumni2020 = [
-  { name: '颜昊旻', destination: '阿里巴巴', role: '后端开发工程师', sector: 'industry' },
-  { name: '申佳', destination: '香港理工大学', role: '研究助理', sector: 'academia' },
-  { name: '史鹏', destination: '渤海银行', role: '软件开发工程师', sector: 'industry' },
-  { name: '孙晴', destination: '商汤', role: '算法研究员', sector: 'industry' },
-  { name: '马昊东', destination: '工商银行数据中心', role: '科技菁英', sector: 'industry' },
-  { name: '肖业凡', destination: '北京小川科技', role: '图像算法工程师', sector: 'industry' },
-  { name: '王明迁', destination: '理想汽车', role: '自动驾驶算法工程师', sector: 'industry' },
-  { name: '阴立强', destination: '中国航空工业雷华研究所', role: '系统管理软件设计', sector: 'industry' },
-  { name: '邢兆虎', destination: '香港科技大学（广州）', role: '博士', sector: 'academia' },
-  { name: '孟繁博', destination: '中国农业发展银行', role: '软件开发工程师', sector: 'industry' },
+const masterAlumni2020: Alumni[] = [
+  { name: '颜昊旻', destination: '阿里巴巴', role: '后端开发工程师', sector: 'industry', image: '/images/20240608182104.jpg' },
+  { name: '申佳', destination: '香港理工大学', role: '研究助理', sector: 'academia', image: '/images/20240608181924.jpg' },
+  { name: '史鹏', destination: '渤海银行', role: '软件开发工程师', sector: 'industry', image: '/images/20240608181817.jpg' },
+  { name: '孙晴', destination: '商汤', role: '算法研究员', sector: 'industry', image: '/images/20240608181716.jpg' },
+  { name: '马昊东', destination: '工商银行数据中心', role: '科技菁英', sector: 'industry', image: '/images/20240608181628.jpg' },
+  { name: '肖业凡', destination: '北京小川科技', role: '图像算法工程师', sector: 'industry', image: '/images/20240608181538.jpg' },
+  { name: '王明迁', destination: '理想汽车', role: '自动驾驶算法工程师', sector: 'industry', image: '/images/20240608181447.jpg' },
+  { name: '阴立强', destination: '中国航空工业雷华研究所', role: '系统管理软件设计', sector: 'industry', image: '/images/20240608181401.jpg' },
+  { name: '邢兆虎', destination: '香港科技大学（广州）', role: '博士', sector: 'academia', image: '/images/20240608181248.jpg' },
+  { name: '孟繁博', destination: '中国农业发展银行', role: '软件开发工程师', sector: 'industry', image: '/images/20240608180954.jpg' },
 ];
 
 const allAlumni = [...phdAlumni, ...masterAlumni2021, ...masterAlumni2020];
@@ -39,24 +48,6 @@ const academiaCount = allAlumni.filter(a => a.sector === 'academia').length;
 const industryCount = allAlumni.filter(a => a.sector === 'industry').length;
 const academiaPercent = Math.round((academiaCount / totalAlumni) * 100);
 const industryPercent = Math.round((industryCount / totalAlumni) * 100);
-
-const avatarColors = [
-  'bg-tju-red', 'bg-blue-600', 'bg-emerald-600', 'bg-amber-600',
-  'bg-purple-600', 'bg-cyan-600', 'bg-rose-600', 'bg-indigo-600',
-  'bg-teal-600', 'bg-orange-600',
-];
-
-function getAvatarColor(name: string) {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  return avatarColors[Math.abs(hash) % avatarColors.length];
-}
-
-function getInitial(name: string) {
-  return name.charAt(0);
-}
 ---
 
 <Layout title="毕业学生" description="视觉智能实验室毕业学生">
@@ -114,9 +105,11 @@ function getInitial(name: string) {
         {phdAlumni.map((person) => (
           <div class="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
             <div class="flex items-start gap-4">
-              <div class={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0 ${getAvatarColor(person.name)}`}>
-                {getInitial(person.name)}
-              </div>
+              <img
+                src={person.image}
+                alt={person.name}
+                class="w-14 h-14 rounded-full object-cover shrink-0 border-2 border-gray-100"
+              />
               <div class="min-w-0">
                 <div class="flex items-center gap-2">
                   <h3 class="font-semibold text-gray-900">{person.name}</h3>
@@ -152,9 +145,11 @@ function getInitial(name: string) {
           {masterAlumni2021.map((person) => (
             <div class="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
               <div class="flex items-start gap-4">
-                <div class={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0 ${getAvatarColor(person.name)}`}>
-                  {getInitial(person.name)}
-                </div>
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  class="w-14 h-14 rounded-full object-cover shrink-0 border-2 border-gray-100"
+                />
                 <div class="min-w-0">
                   <h3 class="font-semibold text-gray-900">{person.name}</h3>
                   <p class="text-sm text-gray-600 mt-1">{person.destination}</p>
@@ -179,9 +174,11 @@ function getInitial(name: string) {
           {masterAlumni2020.map((person) => (
             <div class="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
               <div class="flex items-start gap-4">
-                <div class={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg shrink-0 ${getAvatarColor(person.name)}`}>
-                  {getInitial(person.name)}
-                </div>
+                <img
+                  src={person.image}
+                  alt={person.name}
+                  class="w-14 h-14 rounded-full object-cover shrink-0 border-2 border-gray-100"
+                />
                 <div class="min-w-0">
                   <h3 class="font-semibold text-gray-900">{person.name}</h3>
                   <p class="text-sm text-gray-600 mt-1">{person.destination}</p>
