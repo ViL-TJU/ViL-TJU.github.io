@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="在读学生" description="视觉智能实验室在读学生">
+  <div class="bg-gradient-to-br from-tju-red to-red-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">在读学生</h1>
+      <p class="text-xl text-red-100">Current Students</p>
+    </div>
+  </div>
+
+  <div class="border-b border-gray-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex space-x-8">
+        <a href="/people" class="border-b-2 border-transparent py-4 text-sm font-medium text-gray-500 hover:text-gray-700">所有成员</a>
+        <a href="/people/faculty" class="border-b-2 border-transparent py-4 text-sm font-medium text-gray-500 hover:text-gray-700">教师</a>
+        <a href="/people/students" class="border-b-2 border-tju-red py-4 text-sm font-medium text-tju-red">在读学生</a>
+        <a href="/people/alumni" class="border-b-2 border-transparent py-4 text-sm font-medium text-gray-500 hover:text-gray-700">毕业学生</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center">
+      <p class="text-gray-600">学生列表正在整理中...</p>
+    </div>
+  </div>
+</Layout>

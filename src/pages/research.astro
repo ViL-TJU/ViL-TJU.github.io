@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const researchAreas = [
+  {
+    title: "视频内容分析与理解",
+    description: "面向单一视角非特定目标检测与跟踪、多视角协同的多目标关联感知和复杂场景多目标行为分析理解开展研究。",
+    achievements: "已发表高水平会议/期刊论文近20篇，申请专利近10项",
+    image: "/images/research_video.jpg",
+    tags: ["目标检测", "目标跟踪", "行为分析"]
+  },
+  {
+    title: "多模态理解与应用",
+    description: "任务常常可以由多种模态表征，而利用多种模态之间信息的互补性和冗余性可以提升任务性能。本方向开展高效多模态理解和手语理解等研究。",
+    achievements: "已发表高水平会议/期刊论文近10篇，承担相关项目一项",
+    image: "/images/research_multimodal.jpg",
+    tags: ["多模态学习", "手语理解", "跨模态融合"]
+  },
+  {
+    title: "医学影像处理与理解",
+    description: "医学影像处理与理解旨在将人工智能技术应用于医学分析中，以更好地帮助患者和医生进行病情诊断。",
+    achievements: "在多个高水平会议/期刊上发表论文，与多家医院开展合作",
+    image: "/images/research_medical.jpg",
+    tags: ["医学影像", "AI诊断", "图像分割"]
+  },
+  {
+    title: "精细化图像理解与识别",
+    description: "精细化图像识别针对空间、类别和语义精细化三大目标，让计算机看清不同尺度的目标、看全已知和未知目标种类，以及看懂复杂目标语义关系。",
+    achievements: "已发表高水平会议/期刊论文近10篇",
+    image: "/images/20240114111157.jpg",
+    tags: ["细粒度识别", "目标检测", "语义理解"]
+  },
+  {
+    title: "数字文化遗产安全保护与利用",
+    description: "本方向设计了满足协同标注的众智标注平台1套，设计并开发了数字文化遗产智能计算引擎。",
+    achievements: "发表论文6篇，申请发明专利5项，获批软件著作权5项，成果已在敦煌研究院和湖南博物院部署使用",
+    image: "/images/research_cultural.jpg",
+    tags: ["文物保护", "智能计算", "数字博物馆"]
+  },
+  {
+    title: "微变视觉感知",
+    description: "本方向面向如何在开放动态环境中持续、精准地感知长周期、小目标、细微变化。",
+    achievements: "发表论文7篇，获批发明专利13项，软著4项，承担科技部重点研发项目等重点项目五项",
+    image: "/images/research_microchange.jpg",
+    tags: ["微变检测", "精密测量", "变化检测"]
+  },
+  {
+    title: "机器学习理论",
+    description: "机器学习算法设计与理论分析，面向各种大规模机器学习问题的快速求解与训练问题，设计快速高效且具有更好泛化能力的算法。",
+    achievements: "已发表高水平会议/期刊论文近20篇，承担国家自然科学基金面上项目2项",
+    image: "/images/research_ml.jpg",
+    tags: ["优化算法", "泛化理论", "大规模学习"]
+  }
+];
+---
+
+<Layout title="研究方向" description="视觉智能实验室研究方向">
+  <!-- Header -->
+  <div class="bg-gradient-to-br from-tju-red to-red-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">研究方向</h1>
+      <p class="text-xl text-red-100">Research Areas</p>
+    </div>
+  </div>
+
+  <!-- Research Areas -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="space-y-16">
+      {researchAreas.map((area, index) => (
+        <div class={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+          <div class={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <img src={area.image} alt={area.title} class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+          <div class={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+            <div class="flex flex-wrap gap-2 mb-4">
+              {area.tags.map(tag => (
+                <span class="px-3 py-1 bg-red-100 text-tju-red text-sm rounded-full">{tag}</span>
+              ))}
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">{area.title}</h2>
+            <p class="text-gray-600 leading-relaxed mb-4">{area.description}</p>
+            <div class="bg-gray-50 rounded-lg p-4 border-l-4 border-tju-red">
+              <p class="text-sm text-gray-700"><span class="font-semibold">成果：</span>{area.achievements}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

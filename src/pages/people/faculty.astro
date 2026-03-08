@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faculty = [
+  {
+    name: "冯伟",
+    title: "讲席教授",
+    email: "wfeng@tju.edu.cn",
+    research: "主动机器人视觉，视觉智能",
+    image: "/images/20240116134356.png"
+  },
+  {
+    name: "万亮",
+    title: "英才教授",
+    email: "lwan@tju.edu.cn",
+    research: "计算机视觉、医学影像处理",
+    image: "/images/20240116133422.jpg"
+  },
+  {
+    name: "尚凡华",
+    title: "英才教授",
+    email: "fhshang@tju.edu.cn",
+    research: "机器学习，计算机视觉",
+    image: "/images/20240116132402.png"
+  },
+  {
+    name: "刘红英",
+    title: "英才副教授",
+    email: "hyliu2009@tju.edu.cn",
+    research: "视频图像分析，医学影像增强",
+    image: "/images/20240116203521.jpg"
+  },
+  {
+    name: "林迪",
+    title: "英才副教授",
+    email: "Ande.lin1988@gmail.com",
+    research: "计算机视觉和机器学习",
+    image: "/images/20230830095255.png"
+  },
+  {
+    name: "张乾",
+    title: "助理教授（博士后）",
+    email: "qianz@tju.edu.cn",
+    research: "成像条件重现，微变视觉",
+    image: "/images/20240126133054.png"
+  }
+];
+---
+
+<Layout title="教师团队" description="视觉智能实验室教师团队">
+  <!-- Header -->
+  <div class="bg-gradient-to-br from-tju-red to-red-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl lg:text-5xl font-bold mb-4">教师团队</h1>
+      <p class="text-xl text-red-100">Faculty Members</p>
+    </div>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <div class="border-b border-gray-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex space-x-8">
+        <a href="/people" class="border-b-2 border-transparent py-4 text-sm font-medium text-gray-500 hover:text-gray-700">所有成员</a>
+        <a href="/people/faculty" class="border-b-2 border-tju-red py-4 text-sm font-medium text-tju-red">教师</a>
+        <a href="/people/students" class="border-b-2 border-transparent py-4 text-sm font-medium text-gray-500 hover:text-gray-700">在读学生</a>
+        <a href="/people/alumni" class="border-b-2 border-transparent py-4 text-sm font-medium text-gray-500 hover:text-gray-700">毕业学生</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Faculty Grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {faculty.map((member) => (
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+          <div class="aspect-square bg-gray-100">
+            <img src={member.image} alt={member.name} class="w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-gray-900">{member.name}</h3>
+              <span class="px-3 py-1 bg-red-100 text-tju-red text-sm rounded-full">{member.title}</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">{member.research}</p>
+            <a href={`mailto:${member.email}`} class="inline-flex items-center text-sm text-tju-red hover:underline">
+              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              {member.email}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

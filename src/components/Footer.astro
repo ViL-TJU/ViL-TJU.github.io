@@ -1,0 +1,73 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-900 text-gray-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Lab Info -->
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-br from-tju-red to-red-700 rounded-lg flex items-center justify-center text-white font-bold">
+            ViL
+          </div>
+          <span class="font-semibold text-white">视觉智能实验室</span>
+        </div>
+        <p class="text-sm text-gray-400 mb-4">
+          Visual Intelligence Lab<br>
+          天津大学智能与计算学部
+        </p>
+        <p class="text-sm text-gray-400">
+          地址：天津大学北洋园校区55教学楼<br>
+          邮编：300350
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">快速链接</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:text-white transition-colors">课题组简介</a></li>
+          <li><a href="/people" class="hover:text-white transition-colors">团队成员</a></li>
+          <li><a href="/research" class="hover:text-white transition-colors">研究方向</a></li>
+          <li><a href="/publications" class="hover:text-white transition-colors">学术成果</a></li>
+          <li><a href="/join" class="hover:text-white transition-colors">加入我们</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">联系我们</h3>
+        <ul class="space-y-2 text-sm">
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-tju-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <a href="mailto:wfeng@ieee.org" class="hover:text-white transition-colors">wfeng@ieee.org</a>
+          </li>
+          <li class="flex items-center space-x-2">
+            <svg class="w-4 h-4 text-tju-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+            </svg>
+            <a href="http://www.tjuvil.net" target="_blank" class="hover:text-white transition-colors">www.tjuvil.net</a>
+          </li>
+        </ul>
+        <div class="mt-4">
+          <a
+            href="/join"
+            class="inline-flex items-center px-4 py-2 bg-tju-red text-white text-sm font-medium rounded-lg hover:bg-red-800 transition-colors"
+          >
+            诚聘博士后/科研助理
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500">
+      <p>&copy; {currentYear} 天津大学视觉智能实验室. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

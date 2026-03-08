@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const researchAreas = [
+  {
+    title: "视频内容分析",
+    desc: "目标检测与跟踪、多目标关联感知、行为分析理解",
+    image: "/images/research_video.jpg"
+  },
+  {
+    title: "医学影像处理",
+    desc: "AI辅助诊断、医学图像分析、与多家医院合作",
+    image: "/images/research_medical.jpg"
+  },
+  {
+    title: "数字文化遗产",
+    desc: "文物表面监测、敦煌研究院和湖南博物院合作",
+    image: "/images/research_cultural.jpg"
+  },
+  {
+    title: "多模态理解",
+    desc: "多模态学习、手语理解、跨模态信息融合",
+    image: "/images/research_multimodal.jpg"
+  }
+];
+
+const stats = [
+  { number: "100+", label: "发表论文" },
+  { number: "30+", label: "发明专利" },
+  { number: "6", label: "研究方向" },
+  { number: "50+", label: "团队成员" }
+];
+---
+
+<Layout title="首页">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-gray-50 via-white to-red-50 overflow-hidden">
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+      <div class="absolute top-40 right-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 lg:pt-32 lg:pb-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+          <div class="inline-flex items-center px-4 py-2 bg-red-100 text-tju-red rounded-full text-sm font-medium">
+            <span class="w-2 h-2 bg-tju-red rounded-full mr-2 animate-pulse"></span>
+            诚聘博士后、科研助理
+          </div>
+
+          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+            视觉智能实验室
+            <span class="block text-tju-red mt-2">Visual Intelligence Lab</span>
+          </h1>
+
+          <p class="text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl">
+            天津大学智能与计算学部视觉智能实验室，致力于计算机视觉、视频分析、医学影像处理等领域的研究。
+            国家文物局重点科研基地核心技术团队。
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="/research" class="inline-flex items-center px-6 py-3 bg-tju-red text-white font-medium rounded-lg hover:bg-red-800 transition-all hover:shadow-lg">
+              了解研究方向
+              <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+            <a href="/join" class="inline-flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-tju-red hover:text-tju-red transition-all">
+              加入我们
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <img src="/images/banner1.jpg" alt="ViL Team" class="w-full h-auto object-cover"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4 hidden lg:block">
+            <div class="flex items-center space-x-3">
+              <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-tju-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900">国家文物局</p>
+                <p class="text-sm text-gray-500">重点科研基地</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="border-t border-gray-200 bg-white/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {stats.map((stat) => (
+            <div class="text-center">
+              <div class="text-3xl lg:text-4xl font-bold text-tju-red">{stat.number}</div>
+              <div class="text-gray-600 mt-1">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Areas -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">研究方向</h2>
+        <p class="mt-4 text-lg text-gray-600">聚焦前沿技术，推动学术创新</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {researchAreas.map((area, index) => (
+          <a href="/research" class="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src={area.image} alt={area.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-tju-red transition-colors">{area.title}</h3>
+              <p class="mt-2 text-sm text-gray-600 line-clamp-2">{area.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/research" class="inline-flex items-center text-tju-red font-medium hover:underline">
+          查看全部研究方向
+          <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- News & Recruitment -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Latest News -->
+        <div>
+          <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">最新动态</h2>
+            <a href="/news" class="text-tju-red hover:underline text-sm">查看更多</a>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="text-sm text-gray-500 mb-2">2024-01-25</div>
+              <h3 class="font-semibold text-gray-900 hover:text-tju-red cursor-pointer">实验室在数字文化遗产保护领域取得新进展</h3>
+              <p class="mt-2 text-sm text-gray-600">相关成果已在敦煌研究院和湖南博物院部署使用...</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div class="text-sm text-gray-500 mb-2">2024-01-20</div>
+              <h3 class="font-semibold text-gray-900 hover:text-tju-red cursor-pointer">多篇论文被顶级会议录用</h3>
+              <p class="mt-2 text-sm text-gray-600">实验室成员在CVPR、ICCV等顶级会议发表论文...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recruitment -->
+        <div class="bg-gradient-to-br from-tju-red to-red-800 rounded-2xl p-8 text-white">
+          <div class="flex items-center space-x-2 mb-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span class="font-semibold">长期招聘</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-4">诚聘博士后 / 科研助理</h2>
+          <p class="text-red-100 mb-6">
+            欢迎具有计算机视觉、机器学习、医学影像处理等背景的优秀人才加入我们的团队。
+            提供有竞争力的薪酬待遇和良好的科研环境。
+          </p>
+          <ul class="space-y-2 text-red-100 text-sm mb-8">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              博士后年薪 30-50万
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              充足的科研经费支持
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+              优秀的团队合作氛围
+            </li>
+          </ul>
+          <a href="/join" class="inline-flex items-center px-6 py-3 bg-white text-tju-red font-medium rounded-lg hover:bg-gray-100 transition-colors">
+            了解详情
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
