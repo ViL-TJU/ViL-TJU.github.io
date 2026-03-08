@@ -1,14 +1,11 @@
-@import "tailwindcss";
-
-@theme {
-  --color-tju-red: #9B0000;
-  --color-tju-gold: #C9A961;
-  --color-tju-dark: #1a1a1a;
-  --color-tju-gray: #f5f5f5;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --font-sans: "Inter", "Noto Sans SC", system-ui, sans-serif;
+  --color-tju-red: #9B0000;
+  --color-tju-gold: #C9A961;
 }
 
 html {
@@ -17,7 +14,6 @@ html {
 
 body {
   font-family: var(--font-sans);
-  @apply bg-white text-gray-900;
 }
 
 /* Custom scrollbar */
@@ -26,15 +22,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  background-color: #f3f4f6;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 rounded-full;
+  background-color: #9ca3af;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500;
+  background-color: #6b7280;
 }
 
 /* Animation utilities */
@@ -53,7 +50,37 @@ body {
   animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Typography */
-.prose h1, .prose h2, .prose h3 {
-  @apply font-bold tracking-tight;
+/* TJU Brand Colors */
+.bg-tju-red {
+  background-color: #9B0000;
+}
+
+.text-tju-red {
+  color: #9B0000;
+}
+
+.hover\:bg-tju-red:hover {
+  background-color: #9B0000;
+}
+
+.hover\:text-tju-red:hover {
+  color: #9B0000;
+}
+
+.border-tju-red {
+  border-color: #9B0000;
+}
+
+.from-tju-red {
+  --tw-gradient-from: #9B0000;
+  --tw-gradient-to: rgb(155 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.to-red-800 {
+  --tw-gradient-to: #991b1b;
+}
+
+.to-red-700 {
+  --tw-gradient-to: #b91c1c;
 }
